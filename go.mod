@@ -1,4 +1,4 @@
-module github.com/gruntwork-io/git-xargs
+module github.com/justinlarose/git-xargs
 
 go 1.14
 
