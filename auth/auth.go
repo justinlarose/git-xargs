@@ -53,7 +53,9 @@ func ConfigureGithubClient() GithubClient {
 	tc := oauth2.NewClient(context.Background(), ts)
 
 	// Wrap the go-github client in a GithubClient struct, which is common between production and test code
-	client := NewClient(github.NewClient(tc))
+	_client, _ := github.NewEnterpriseClient("https://github.comcast.com/api/v3/", "github.comcast.com/api/v3/upload", tc)
+	client := NewClient(_client)
+
 
 	return client
 }
